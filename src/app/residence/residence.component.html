@@ -1,0 +1,119 @@
+<div class="col-md-6 offset-md-3">
+
+  <h3>Residence</h3>
+
+    <!-- <div class="alert alert-warning" *ngIf="residenceForm.dirty && residenceForm.invalid">Enter valid values</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && stateId.invalid">Enter valid state</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && cityId.invalid">Enter valid city</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && lgaId.invalid">Enter valid lga</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && townId.invalid">Enter valid town</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && lcdaId.invalid">Enter valid lcda</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && villageId.invalid">Enter valid village</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && streetId.invalid">Enter valid street</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && landMark.invalid">Enter valid land mark</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && houseNumber.invalid">Enter valid house number</div>
+    <div class="alert alert-warning" *ngIf="residenceForm.dirty && roomNumber.invalid">Enter valid room number</div> -->
+
+  <form (ngSubmit)="!residenceForm.invalid && saveResidence()" #residenceForm="ngForm">
+
+    <table width="100%">
+      <tr>
+        <td width="50%" style="padding-left: 10px">
+          <!-- <mat-card >  -->
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">State: </label>
+                <select class="form-control">
+                  <option *ngFor="let state of states" (click)="setResidenceState(state.id)" [value]="'state.name'">{{state.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">City: </label>
+                <select class="form-control">
+                  <option *ngFor="let city of cities" (click)="setResidenceCity(city.id)" [value]="'city.name'">{{city.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">LGA: </label>
+                <select class="form-control">
+                  <option *ngFor="let lga of lgas" (click)="setResidenceLga(lga.id)" [value]="'lga.name'"> {{lga.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">Town: </label>
+                <select class="form-control">
+                  <option *ngFor="let town of towns" (click)="setResidenceTown(town.id)" [value]="'town.name'">{{town.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">LCDA: </label>
+                <select class="form-control">
+                  <option *ngFor="let lcda of lcdas" (click)="setResidenceLcda(lcda.id)" [value]="'lcda.name'">{{lcda.name}}</option>
+                </select>
+              </div>
+            </div>
+        </td>
+
+        <td width="50%">
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">Village: </label>
+                <select class="form-control">
+                  <option *ngFor="let village of villages" (click)="setResidenceVillage(village.id)" [value]="'village.name'">{{village.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="">Street: </label>
+                <select class="form-control">
+                  <option *ngFor="let street of streets" (click)="setResidenceStreet(street.id)" [value]="'street.name'">{{street.name}}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="landMark">Land Mark: </label>
+                <input type="text" #landMark="ngModel" [(ngModel)]="residence.landMark" class="form-control" id="landMark" name="landMark" required="required" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="houseNumber">House Number: </label>
+                <input type="text" #houseNumber="ngModel" [(ngModel)]="residence.houseNumber" class="form-control" id="houseNumber" name="houseNumber" required="required" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <label for="roomNumber">Room Number: </label>
+                <input type="text" #roomNumber="ngModel" [(ngModel)]="residence.roomNumber" class="form-control" id="roomNumber" name="roomNumber" required="required" />
+              </div>
+            </div>
+          <!-- </mat-card> -->
+        </td>
+      </tr>
+    </table>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+    <a routerLink="/home" class="float-right btn btn-info">Back</a>
+
+  </form>
+</div>
